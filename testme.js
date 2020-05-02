@@ -22,7 +22,7 @@ function run() {
     alert("Pozdrav iz daleka");
 
 }
-
+/*
 function loadJQ() {
     // Load newest jQuery if it isn't already
     if (typeof jQuery == 'undefined') {
@@ -36,5 +36,5 @@ function loadJQ() {
     jQuery.noConflict();
 }
 
-loadJQ();
+loadJQ();*/
 run();
