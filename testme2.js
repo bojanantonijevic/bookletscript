@@ -36,7 +36,7 @@ function run() {
 function loadJQ() {
 
     // the minimum version of jQuery we want
-    var v = "1.3.2";
+    var v = "2.2.4";
 
     // check prior inclusion and version
     if (window.jQuery === undefined || window.jQuery.fn.jquery < v) {
@@ -62,6 +62,7 @@ function target(){
 
     $(".carouselLegendGrid").children('div:first').children('div').each(function(){
         var img = $(this).children('button').children('img').attr('src');
+        console.log(img);
     });
 
 
