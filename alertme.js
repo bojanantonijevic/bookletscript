@@ -19,10 +19,20 @@ function run() {
     // Your script here.
     // Remember that you have full access to the DOM on which page the bookmarklet is loaded,
     // which means that you can manipulate the content of other sites on-the-fly
-    alert("Pozdrav iz daleka");
+    console.log("Starting script.");
+    let domain = window.location.hostname;
+
+    console.log("Doman recognized as: "+ domain);
+
+    if(domain == 'www.target.com'){
+
+        target();
+
+    }
+
 
 }
-/*
+
 function loadJQ() {
     // Load newest jQuery if it isn't already
     if (typeof jQuery == 'undefined') {
@@ -36,5 +46,18 @@ function loadJQ() {
     jQuery.noConflict();
 }
 
-loadJQ();*/
+function target(){
+
+    console.log("Starting Target Function.");
+
+    let img = $(".ZoomedImage__Zoomed-sc-1j8d1oa-0").previousElementSibling;
+    console.log(img);
+
+
+
+}
+
+
+
+loadJQ();
 run();
