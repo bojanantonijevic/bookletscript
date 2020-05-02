@@ -29,7 +29,7 @@ function loadJQ() {
         var jQuery = document.createElement('script');
         jQuery.type = 'text/javascript';
         jQuery.onload = run;
-        jQuery.src = 'http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js';
+        jQuery.src = 'https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js';
         document.body.appendChild(jQuery);
     }
     // Activate no-conflict mode, remember to call jQuery().function instead of $().function
