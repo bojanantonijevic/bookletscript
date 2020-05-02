@@ -34,24 +34,35 @@ function run() {
 }
 
 function loadJQ() {
-    // Load newest jQuery if it isn't already
-    if (typeof jQuery == 'undefined') {
-        var jQuery = document.createElement('script');
-        jQuery.type = 'text/javascript';
-        jQuery.onload = run;
-        jQuery.src = 'https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js';
-        document.body.appendChild(jQuery);
+
+    // the minimum version of jQuery we want
+    var v = "1.3.2";
+
+    // check prior inclusion and version
+    if (window.jQuery === undefined || window.jQuery.fn.jquery < v) {
+        var done = false;
+        var script = document.createElement("script");
+        script.src = "http://ajax.googleapis.com/ajax/libs/jquery/" + v + "/jquery.min.js";
+        script.onload = script.onreadystatechange = function(){
+            if (!done && (!this.readyState || this.readyState == "loaded" || this.readyState == "complete")) {
+                done = true;
+                run();
+            }
+        };
+        document.getElementsByTagName("head")[0].appendChild(script);
+    } else {
+        run();
     }
-    // Activate no-conflict mode, remember to call jQuery().function instead of $().function
-    jQuery.noConflict();
+
 }
 
 function target(){
 
     console.log("Starting Target Function.");
 
-    let img = $(".ZoomedImage__Zoomed-sc-1j8d1oa-0").previousElementSibling;
-    console.log(img);
+    $(".carouselLegendGrid").children('div:first').children('div').each(function(){
+        var img = $(this).children('button').children('img').attr('src');
+    });
 
 
 
