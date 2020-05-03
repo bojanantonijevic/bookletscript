@@ -52,7 +52,7 @@ function target(){
         console.log(img);
     });
 
-
+    createOverlay();
 
 }
 
@@ -70,7 +70,7 @@ function createOverlay(){
                 });
             });
 
-    
+
 }
 
 
