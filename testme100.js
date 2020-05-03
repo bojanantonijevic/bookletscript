@@ -24,13 +24,13 @@ function loadJQ() {
 
 function run() {
 
-    // Your script here.
-    // Remember that you have full access to the DOM on which page the bookmarklet is loaded,
-    // which means that you can manipulate the content of other sites on-the-fly
+
     console.log("Starting script.");
     let domain = window.location.hostname;
 
     console.log("Doman recognized as: "+ domain);
+
+    $('head').append('<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bojanantonijevic/bookletscript/overlay.css" type="text/css" />');
 
     if(domain == 'www.target.com'){
 
@@ -58,17 +58,17 @@ function target(){
 
 function createOverlay(){
 
-    $(document).ready(function() {
-                $(".submit").click(function()
-                {
+    
+                
                     $('<iframe />');  // Create an iframe element
                     $('<iframe />', {
                         name: 'frame1',
                         id: 'frame1',
-                        src: 'http://www.programmingfacts.com'
+                        src: 'https://www.programmingfacts.com'
+                        
                     }).appendTo('body');
-                });
-            });
+               
+          
 
 
 }
